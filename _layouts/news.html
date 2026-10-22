@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article>
+<p><a href="{{ '/' | relative_url }}">← News 목록</a></p>
+<p class="meta"><span class="tag">{{ page.category }}</span>{{ page.date | date: "%Y.%m.%d" }}{% if page.place %} · {{ page.place }}{% endif %}</p>
+<h1>{{ page.title }}</h1>
+{% if page.image %}<img src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}
+{{ content }}
+</article>
