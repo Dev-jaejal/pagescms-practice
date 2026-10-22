@@ -1,0 +1,29 @@
+media: media/images            # 사진이 저장될 폴더
+
+content:
+  - name: news
+    label: News                # 관리 화면 왼쪽 메뉴 이름
+    type: collection           # 여러 건이 쌓이는 목록
+    path: content/news         # 글 파일이 저장될 폴더
+    view:
+      fields: [title, date, category]
+    fields:
+      - { name: title, label: 제목, type: string, required: true }
+      - { name: date, label: 게시일, type: date }
+      - name: category
+        label: 분류
+        type: select
+        options:
+          values: [소식, 언론보도, 공지]
+      - { name: place, label: 장소, type: string }
+      - { name: image, label: 대표 사진, type: image }
+      - { name: body, label: 본문, type: rich-text }
+
+  - name: contact
+    label: 연락처
+    type: file                 # 한 건짜리 정보
+    path: content/contact.yml
+    fields:
+      - { name: address, label: 주소, type: string }
+      - { name: phone, label: 전화, type: string }
+      - { name: email, label: 이메일, type: string }
