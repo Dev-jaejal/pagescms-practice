@@ -1,0 +1,17 @@
+---
+layout: default
+title: News
+---
+<h1>News</h1>
+{% assign news = site.pages | where_exp: "p", "p.path contains 'content/news/'" | sort: "date" | reverse %}
+<ul class="cards">
+{% for p in news %}
+  <li class="card"><a href="{{ p.url | relative_url }}">
+    {% if p.image %}<img class="ph" src="{{ p.image | relative_url }}" alt="">{% else %}<span class="ph"></span>{% endif %}
+    <div>
+      <p class="meta"><span class="tag">{{ p.category }}</span>{{ p.date | date: "%Y.%m.%d" }}</p>
+      <strong>{{ p.title }}</strong>
+    </div>
+  </a></li>
+{% endfor %}
+</ul>
