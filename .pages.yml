@@ -21,8 +21,8 @@ content:
 
   - name: contact
     label: 연락처
-    type: file                 # 한 건짜리 정보
-    path: content/contact.yml
+    type: file                 # 한 건짜리 정보 (사이트 하단에 표시)
+    path: _data/contact.yml
     fields:
       - { name: address, label: 주소, type: string }
       - { name: phone, label: 전화, type: string }
