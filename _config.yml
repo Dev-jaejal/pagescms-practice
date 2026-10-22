@@ -1,0 +1,8 @@
+title: ELSDR 연습 사이트
+baseurl: /pagescms-practice
+exclude: [README.md]
+defaults:
+  - scope:
+      path: content/news
+    values:
+      layout: news
